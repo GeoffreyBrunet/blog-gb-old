@@ -1,95 +1,85 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import { css } from "@/styled-system/css";
+import "./global.css";
+import { CssForLink, CssforP } from "./components/ui/reusableCssComponents";
+import Link from "next/link";
+import Navigation from "./components/Navigation";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+    <>
+      <Navigation />
+      <h1
+        className={css({
+          fontSize: "4.5em",
+          fontWeight: "bold",
+          marginTop: "20px",
+        })}
+      >
+        Ohayô ⛩️
+      </h1>
+      <h2
+        className={css({
+          fontSize: "2.2em",
+          fontWeight: 500,
+          marginTop: "20px",
+        })}
+      >
+        Je m&apos;appelle <strong>Geoffrey Brunet</strong>.
+      </h2>
+      <p className={CssforP}>
+        Je suis un développeur full stack, pour une entreprise parisienne
+        spécialisée dans la BI et l&apos;EPM. Mon rôle est de développer des
+        outils (
+        <strong className={css({ fontWeight: "bold" })}>
+          interfaces webs, APIs REST, bases de données
+        </strong>
+        ) utilisés autours de notre solution logicielle, permettant la
+        manipuation de bases de données multidimensionnelles dans Microsoft
+        Excel ou Google Sheets. Je code en{" "}
+        <strong className={css({ fontWeight: "bold" })}>TypeScript</strong> et
+        en <strong className={css({ fontWeight: "bold" })}>Rust</strong>, le
+        second étant principalement sur des projets personels.
+      </p>
+      <p className={CssforP}>
+        Ce blog est fait avec&#x205F;
+        <Link href="https://nextjs.org/" target="_blank" className={CssForLink}>
+          Next.js
+        </Link>
+        &#x205F;et me sert tout autant de lab, qu&apos;à partager mes
+        connaissances. Il est fait sans framework, et avec des outils
+        exclusivement&#x205F;
+        <strong className={css({ fontWeight: "bold" })}>open-source</strong>. Le
+        code source est disponible sur Github dans ce&#x205F;
+        <Link
+          href="https://github.com/GeoffreyBrunet/geoffreybrunet.github.io"
           target="_blank"
-          rel="noopener noreferrer"
+          className={CssForLink}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+          repository
+        </Link>
+        .
+      </p>
+      <p className={CssforP}>
+        Hormis le développement informatique, j&apos;aime le running ,le trail,
+        la culture japonaise, la décoration d&apos;intérieur et la cuisine. Je
+        suis contactable par&#x205F;
+        <Link
+          href="https://twitter.com/geoffreybrunet5"
           target="_blank"
-          rel="noopener noreferrer"
+          className={CssForLink}
         >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
+          X
+        </Link>
+        &#x205F;et&#x205F;
+        <Link
+          href="https://www.linkedin.com/in/geoffrey-brunet-558315ba/"
           target="_blank"
-          rel="noopener noreferrer"
+          className={CssForLink}
         >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          LinkedIn
+        </Link>
+        .
+      </p>
+    </>
+  );
 }
